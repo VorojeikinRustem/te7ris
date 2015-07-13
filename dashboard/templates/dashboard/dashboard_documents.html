@@ -1,0 +1,43 @@
+{% extends "dashboard_base.html" %}
+{% block content %}
+
+{% include "dashboard_nav.html" %}
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            {% for collection in collections %}
+            <li><a href="/dashboard/{{ collection }}/">{{ collection|title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+{# Тут находились кружочки :D #}
+
+          <h2 class="sub-header">{{ current_collection|title }}</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                {% for key in document_keys %}
+                  <th>{{ key }}</th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+              {% for document in documents %}
+                <tr>
+                {% for v in document.values %}
+                  <td>{{ v|default_if_none:"none3444" }}</td>
+                {% endfor %}
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

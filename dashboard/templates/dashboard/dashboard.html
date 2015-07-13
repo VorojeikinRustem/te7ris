@@ -1,0 +1,22 @@
+{% extends "dashboard_base.html" %}
+{% block content %}
+
+{% include "dashboard_nav.html" %}
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            {% for collection in collections %}
+            <li><a href="/dashboard/{{ collection }}/">{{ collection|title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+{# Тут находились кружочки :D #}
+{% include "dashboard_placeholders.html" %}
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

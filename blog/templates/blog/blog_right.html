@@ -1,0 +1,21 @@
+
+  <div class="sidebar-module sidebar-module-inset">
+    <h4>Описание</h4>
+    <p>Блог реализован средствами фреймворка Django, bootstrap. </p>
+  </div>
+  <div class="sidebar-module">
+    <h4>Архив</h4>
+    <ol class="list-unstyled">
+      {% for d in dates %}
+      <li><a href="/blog/{{ d|date:'n/Y' }}">{{ d|date:"j M Y" }}</a></li>
+      {% endfor %}
+    </ol>
+  </div>
+  <div class="sidebar-module">
+    <h4>Другие сайты</h4>
+    <ol class="list-unstyled">
+      <li><a href="/blog/">Блог</a></li>
+      <li><a href="/auction/">Аукцион</a></li>
+      <li><a href="/internet-magazine/">Интернет магазин</a></li>
+    </ol>
+  </div>

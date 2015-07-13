@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+
+{% block additional_css %}
+  {% include "blog_css.html" %}
+{% endblock %}
+
+{% block title_name %}Blog{% endblock %}
+
+{% block content %}
+
+  {% include "blog_nav.html" %}
+    <div class="container">
+    {% include "blog_title.html" %}
+
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+          {% block container %}
+          {% endblock %}
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          {% include "blog_right.html" %}
+        </div>
+      </div>
+    </div>
+  {% include "blog_footer.html" %}
+
+{% endblock %}
+

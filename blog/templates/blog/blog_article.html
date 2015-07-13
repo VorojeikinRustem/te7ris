@@ -1,0 +1,9 @@
+{% extends "blog_base.html" %}
+
+{% block container %}
+  <div class="blog-post">
+    <h2 class="blog-post-title">{{ article.article_title }}</h2>
+    <p class="blog-post-meta">{{ article.article_date }}</p>
+    {{ article.article_text|linebreaks }}
+  </div>
+{% endblock %}

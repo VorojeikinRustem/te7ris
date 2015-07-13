@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block additional_css %}
+  {% include "portfolio_css.html" %}
+{% endblock %}
+{% block title_name %}Portfolio{% endblock %}
+{% block content %}
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Hello, world!</h1>
+      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="container marketing">
+
+    {% if sections %}
+    <div class="row">
+
+    {% for section in sections %}
+      <div class="col-lg-4">
+
+        <img class="img-circle" src="{{ section.image.url }}" alt="Generic placeholder image" width="140" height="140">
+        <h2>{{ section.title }}</h2>
+        <p>{{ section.description }}</p>
+        <p><a class="btn btn-default" href="{{ section.title_slug }}" role="button">View details &raquo;</a></p>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+    {% include "portfolio_footer.html" %}
+  </div>
+{% endblock %}
+
+

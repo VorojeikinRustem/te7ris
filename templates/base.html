@@ -1,0 +1,29 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  {% include "meta_tags.html" %}
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>{% block title_name %}Glavnaya{% endblock %}</title>
+
+    {% include 'head_css.html' %}
+    {% block additional_css %}{% endblock %}
+
+  </head>
+
+  <body>
+
+    {% block nav %}
+    {% endblock %}
+
+    {% include 'back_to_portfolio_block.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'javascript.html' %}
+
+  </body>
+</html>

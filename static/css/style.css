@@ -1,0 +1,6 @@
+.fixblock {
+    float: left;
+    margin: 15% 0% 0% -1%;
+    position: fixed;
+    border-radius: 0% 25% 25% 0%;
+}

@@ -1,0 +1,21 @@
+{% extends "blog_base.html" %}
+
+{% block container %}
+  {% for article in articles %}
+    <div class="blog-post">
+      <h2 class="blog-post-title"><a href="/blog/articles/{{ article.id }}/">{{ article.article_title }}</a></h2>
+      <p class="blog-post-meta">{{ article.article_date }}</p>
+      {{ article.article_text|linebreaks|truncatechars:300 }}
+    </div><!-- /.blog-post -->
+  {% endfor %}
+    <nav>
+      <ul class="pager">
+      {% if articles.has_previous %}
+        <li><a href="?page={{ articles.previous_page_number }}"><span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span></a></li>
+      {% endif %}
+      {% if articles.has_next %}
+        <li><a href="?page={{ articles.next_page_number }}"><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span></a></li>
+      {% endif %}
+      </ul>
+    </nav>
+{% endblock %}
